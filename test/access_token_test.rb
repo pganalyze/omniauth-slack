@@ -16,7 +16,7 @@ describe OmniAuth::Slack::OAuth2::AccessToken do
 
     @at_class = OmniAuth::Slack::OAuth2::AccessToken
 
-    @scope_base = YAML.load_file(File.join(File.dirname(__FILE__), 'support/scope_base.yml'))
+    @scope_base = YAML.load_file(File.join(File.dirname(__FILE__), 'support/scope_base.yml'), permitted_classes: [OmniAuth::AuthHash, Hashie::Array])
   end
 
   it 'defines getter methods for basic user data' do
