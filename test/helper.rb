@@ -13,7 +13,7 @@ $LOAD_PATH.unshift File.expand_path('../support', __FILE__)
 
 require 'minitest/autorun'
 # Must load after minitest-autorun.
-require 'mocha/setup'
+require 'mocha/minitest'
 
 # Is explicit require-oauth2 still needed?
 require 'oauth2'

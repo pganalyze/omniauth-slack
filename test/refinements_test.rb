@@ -61,8 +61,9 @@ describe OmniAuth::Slack::OAuth2Refinements do
   describe OAuth2::Response do
     describe 'to_auth_hash' do
       it 'returns parsed response as OmniAuth::Slack::AuthHash' do
-        resp = OAuth2::Response.new(a:'data')
-        resp.stubs(:parsed).returns({a:'data'})
+        data = {a:'data'}
+        resp = OAuth2::Response.new(data)
+        resp.stubs(:parsed).returns(data)
         assert_kind_of OmniAuth::Slack::AuthHash, resp.to_auth_hash
         assert_equal({a:'data'}[:a], resp.to_auth_hash.a)
       end
