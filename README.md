@@ -1,14 +1,8 @@
-⚠   **NOTICE**: You are viewing the README of the **master** branch of the **ginjo** fork of the **omniauth-slack** gem.
-This document may refer to features not yet released. Conversely (inversely?) this branch may contain features  and changes not yet documented.
+⚠   **NOTICE**: You are viewing the README of the **master** branch of the **pganalyze** fork of the **omniauth-slack** gem.
 
-To view current or previous releases:
+We maintain this fork for use by pganalyze, due to the [unclear maintenance situation on the original gem](https://github.com/kmrshntr/omniauth-slack/issues/63), with additional fixes on the [previously maintained fork](https://github.com/ginjo/omniauth-slack/issues/22).
 
-| Version | Release Date | README |
-| --- | --- | --- |
-| v2.5.0 (ginjo) | 2020-06-17 | https://github.com/ginjo/omniauth-slack/blob/v2.5.0/README.md |
-| v2.4.1 (ginjo) | 2018-09-18 | https://github.com/ginjo/omniauth-slack/blob/v2.4.1/README.md |
-| v2.4.0 (ginjo) | 2018-08-28 | https://github.com/ginjo/omniauth-slack/blob/v2.4.0/README.md |
-| v2.3.0 ([kmrshntr](https://github.com/kmrshntr)) | 2016-01-06 | https://github.com/kmrshntr/omniauth-slack/blob/master/README.md |
+This fork is currently not published on RubyGems and does not publish versioned releases. It instead should be used via bundler's git integration pointing to the **master** branch.
 
 
 # OmniAuth Slack, a Ruby Gem
@@ -37,13 +31,7 @@ While you're in the application settings, add a Redirect URL to your application
 First start by adding this gem to your Gemfile:
 
   ```ruby
-    gem 'ginjo-omniauth-slack', require:'omniauth-slack'
-  ```
-
-Or specify the latest HEAD (development) version from the ginjo repository:
-
-  ```ruby
-    gem 'ginjo-omniauth-slack', require:'omniauth-slack', git: 'https://github.com/ginjo/omniauth-slack'
+    gem 'omniauth-slack', github: 'pganalyze/omniauth-slack'
   ```
 
 Next, tell OmniAuth about this provider.
@@ -84,19 +72,6 @@ If you are using **[Devise](https://github.com/plataformatec/devise)** then it *
 
       # other stuff...
     end
-  ```
-
-
-To manually install and require the gem:
-
-  ```bash
-    # shell
-    gem install ginjo-omniauth-slack
-  ```
-
-  ```ruby
-    # ruby
-    require 'omniauth-slack'
   ```
 
 
@@ -557,7 +532,7 @@ Create a Sinatra project directory, then add these files.
 
   ```ruby
     source 'https://rubygems.org'
-    gem 'ginjo-omniauth-slack'   #, git:'https://github.com/ginjo/omniauth-slack'
+    gem 'omniauth-slack', github: 'pganalyze/omniauth-slack'
     gem 'sinatra'
     gem 'puma'
   ```
@@ -605,7 +580,7 @@ Create a rails project, then add or modify these files. Note that this is not ne
 #### Gemfile
 
   ```ruby
-    gem 'ginjo-omniauth-slack'   #, git:'https://github.com/ginjo/omniauth-slack'
+    gem 'omniauth-slack', github: 'pganalyze/omniauth-slack'
   ```
 Don't forget to fill in your Slack API credentials. Then start up Rails, and point your browser to
 
